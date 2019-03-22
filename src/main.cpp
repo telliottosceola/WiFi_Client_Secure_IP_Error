@@ -8,10 +8,12 @@
 
 #include <WiFiClientSecure.h>
 
-const char* ssid     = "Travis-WiFi";     // your network SSID (name of wifi network)
-const char* password = "2Washington99"; // your network password
+const char* ssid     = "your-ssid";     // your network SSID (name of wifi network)
+const char* password = "your-password"; // your network password
 
 // const char*  server = "www.howsmyssl.com";  // Server URL
+
+//IP address for "www.howsmyssl.com"
 IPAddress serverIP = {35,227,42,20};
 
 // www.howsmyssl.com root certificate authority, to verify the server
@@ -73,7 +75,7 @@ void setup() {
   Serial.print("Connected to ");
   Serial.println(ssid);
 
-  // client.setCACert(test_root_ca);
+  client.setCACert(test_root_ca);
   //client.setCertificate(test_client_key); // for client verification
   //client.setPrivateKey(test_client_cert);	// for client verification
 
